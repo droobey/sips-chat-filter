@@ -374,7 +374,6 @@ function word_is_command(word,u){
             return true;
         }
     });
-    console.log("W: "+word+" "+d);
     return d;
 }
 
@@ -410,7 +409,6 @@ var cur_options = [];
     
     
 function check_bet(cmd,u,label){
-    console.log(label);
     var mod_check=false;
     if(label[0] == "owner" || label[0] == "mod"){
         mod_check=true;
@@ -432,7 +430,7 @@ function check_bet(cmd,u,label){
          }
         
         if(parseInt(params[2])>0){
-         o += "Max "+params[2];
+         o += "Max "+params[2]+ " dicks";
          }
         o += "<br/>";
         var i = 1;
@@ -442,7 +440,6 @@ function check_bet(cmd,u,label){
             i++;
         }    
         
-        console.log("BET_OPEN "+o);
         drawBetBar(o);
         
         
@@ -468,7 +465,6 @@ function check_bet(cmd,u,label){
         var params = cmd.split(" ");
         var winner = cur_options[ parseInt(params[2])-1 ] ;
         var w = "Bet result<br/>"+params[2] + ") " + winner + " won!";
-        console.log("BET_CLOSE "+ params[2] + ") " + winner);
         
         if(parseInt(params[2]) == bet_option){
          w += "<br/>You won!";
@@ -773,7 +769,6 @@ add_initializer(function(){
 // ============================
 
 function main() {
-    console.log("Loading...")
     run_initializers();
     load_settings();
 
