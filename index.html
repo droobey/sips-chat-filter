@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Sips Chat Filter : A chat filter and bet tracker for Sips twitch chat">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Sips Chat Filter</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/droobey/sips-chat-filter">View on GitHub</a>
+
+          <h1 id="project_title">Sips Chat Filter</h1>
+          <h2 id="project_tagline">A chat filter and bet tracker for Sips twitch chat</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/droobey/sips-chat-filter/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/droobey/sips-chat-filter/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="sips-chat-filter" class="anchor" href="#sips-chat-filter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sips Chat Filter</h1>
+
+<p>A chat filter and bet tracker for Sips twitch chat</p>
+
+<p>This script was adapted from the <a href="https://github.com/jpgohlke/twitch-chat-filter">Twitch Plays Pokemon Chat Filter by jpgohlke</a></p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Hides !bets and !bet commands from chat</li>
+<li>Displays current bet in banner at the top of the chat</li>
+</ul>
+
+<h2>
+<a id="using-the-script-as-a-javascript-bookmark" class="anchor" href="#using-the-script-as-a-javascript-bookmark" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using the script as a JavaScript bookmark</h2>
+
+<p>Fast and lightweight way to run the script.</p>
+
+<ol>
+<li><p>Go to the bookmark menu of your browser and add a new bookmark with the title of your choice.</p></li>
+<li><p>Copy the following snippet and paste it into the URL-Field: <code>javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://github.com/droobey/sips-chat-filter/raw/master/sips_chat_filter.user.js';})();</code></p></li>
+<li><p>Save the Bookmark.</p></li>
+<li><p>From now on, you can just click on that bookmark when you have Sips stream tab open to enable the script.</p></li>
+</ol>
+
+<h2>
+<a id="installing-the-script-using-greasemonkey-firefox" class="anchor" href="#installing-the-script-using-greasemonkey-firefox" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing the script using Greasemonkey (Firefox)</h2>
+
+<p>Installing the userscript via Greasemonkey will automatically run it everytime you watch Sips stream.</p>
+
+<ol>
+<li><p>Install the <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/">Greasemonkey extension</a> for Firefox.</p></li>
+<li><p>Click this link to navigate to the script URL: <a href="https://github.com/droobey/sips-chat-filter/raw/master/sips_chat_filter.user.js">https://github.com/droobey/sips-chat-filter/raw/master/sips_chat_filter.user.js</a></p></li>
+<li><p>Greasemonkey will detect the userscript and ask what to do with it. Tell it to "Install" the script.</p></li>
+<li><p>Refresh Sips stream.</p></li>
+</ol>
+
+<h2>
+<a id="installing-the-script-using-tampermonkey-chrome" class="anchor" href="#installing-the-script-using-tampermonkey-chrome" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing the script using Tampermonkey (Chrome)</h2>
+
+<p>Tampermonkey lets you install userscripts in Chrome, similarly to how Greasemonkey does it in Firefox.</p>
+
+<ol>
+<li><p>Install the <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo/related">Tampermonkey extension</a> for Chrome.</p></li>
+<li><p>Click this link to navigate to the script URL: <a href="https://github.com/droobey/sips-chat-filter/raw/master/sips_chat_filter.user.js">https://github.com/droobey/sips-chat-filter/raw/master/sips_chat_filter.user.js</a></p></li>
+<li><p>Tampermonkey will detect the userscript and will open a new tab. Click on <code>Install to Tampermonkey</code> and click Ok.</p></li>
+<li><p>Refresh Sips stream.</p></li>
+</ol>
+
+<h2>
+<a id="run-the-script-via-the-console-no-extensions-needed" class="anchor" href="#run-the-script-via-the-console-no-extensions-needed" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run the script via the console (no extensions needed)</h2>
+
+<p>If you don't want or can't install one of the previously mentioned browser extensions, one possibility is to run the script via the developer console. However, you will need to rerun the script every time you refresh the stream.</p>
+
+<ol>
+<li>
+<p>On the Sips stream page, open your broser's developer console.</p>
+
+<ul>
+<li>On Firefox, press <code>Ctrl</code> + <code>Shift</code> + <code>K</code>
+</li>
+<li>On Chrome, press <code>Ctrl</code> + <code>Shift</code> + <code>J</code>
+</li>
+<li>On Safari, press <code>Ctrl</code> + <code>Alt</code> + <code>I</code>
+</li>
+<li>On IE9+, press <code>F12</code>
+</li>
+<li>On Opera, press <code>Ctrl</code> + <code>Shift</code> + <code>I</code>
+</li>
+<li>If you are having trouble opening your console, try reading the in depth explanation <a href="http://webmasters.stackexchange.com/questions/8525/how-to-open-the-javascript-console-in-different-browsers">here</a>
+</li>
+</ul>
+</li>
+<li><p>Copy the following snippet and paste it into the developer console on Sips stream page: <code>javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://github.com/droobey/sips-chat-filter/raw/master/sips_chat_filter.user.js';})();</code></p></li>
+<li><p>Press <code>Enter</code> to run the code.</p></li>
+</ol>
+
+<h2>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h2>
+
+<ul>
+<li>Get it to play nicely with <a href="https://nightdev.com/betterttv/">BetterTTV</a>
+</li>
+<li>Add !bankheist support</li>
+<li>Add your current bet to banner when betting is still open</li>
+<li>Add close button to banner</li>
+<li>Filter only version for <a href="https://www.rechat.org/">Twitch ReChat</a>
+</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Sips Chat Filter maintained by <a href="https://github.com/droobey">droobey</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
