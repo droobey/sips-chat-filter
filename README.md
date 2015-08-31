@@ -17,11 +17,11 @@ Fast and lightweight way to run the script.
 
 3. Save the Bookmark.
 
-4. From now on, you can just click on that bookmark when you have the TPP-Tab open to enable the script.
+4. From now on, you can just click on that bookmark when you have Sips stream tab open to enable the script.
 
 ## Installing the script using Greasemonkey (Firefox)
 
-Installing the userscript via Greasemonkey will automatically run it everytime you visit the TPP stream.
+Installing the userscript via Greasemonkey will automatically run it everytime you watch Sips stream.
 
 1. Install the [Greasemonkey extension](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) for Firefox.
 
@@ -42,7 +42,7 @@ Tampermonkey lets you install userscripts in Chrome, similarly to how Greasemonk
 
 3. Tampermonkey will detect the userscript and will open a new tab. Click on `Install to Tampermonkey` and click Ok.
 
-4. Refresh the page TPP stream page.
+4. Refresh Sips stream.
 
 ## Run the script via the console (no extensions needed)
 
@@ -56,7 +56,7 @@ If you don't want or can't install one of the previously mentioned browser exten
     * On Opera, press `Ctrl` + `Shift` + `I`
     * If you are having trouble opening your console, try reading the in depth explanation [here](http://webmasters.stackexchange.com/questions/8525/how-to-open-the-javascript-console-in-different-browsers)
 
-2. Copy the following snippet and paste it into the developer console on the TPP page: `javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://github.com/droobey/sips-chat-filter/raw/master/sips_chat_filter.user.js';})();`
+2. Copy the following snippet and paste it into the developer console on Sips stream page: `javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://github.com/droobey/sips-chat-filter/raw/master/sips_chat_filter.user.js';})();`
 
 3. Press `Enter` to run the code.
 
