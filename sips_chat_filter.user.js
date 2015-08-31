@@ -347,13 +347,13 @@ function drawBetBar(h){
 // and all code that needs to run when the script gets initialized.
     
     if(!Twitch.user.displayName()){
-    user="";
+    var user="";
     }else{
-    user = Twitch.user.displayName().toLowerCase();
+    var user = Twitch.user.displayName().toLowerCase();
     }
     
-    dicks = 0;
-    bet_option = 0;
+    var dicks = 0;
+    var bet_option = 0;
     
 // ---------------------------
 // Command Filter
