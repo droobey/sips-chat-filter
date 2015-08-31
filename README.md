@@ -13,7 +13,7 @@ Fast and lightweight way to run the script.
 
 1. Go to the bookmark menu of your browser and add a new bookmark with the title of your choice.
 
-2. Copy the following snippet and paste it into the URL-Field: `javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://github.com/droobey/sips-chat-filter/raw/master/sips_chat_filter.user.js';})();`
+2. Copy the following snippet and paste it into the URL-Field: `javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://droobey.github.io/sips-chat-filter/sips_chat_filter.user.js';})();`
 
 3. Save the Bookmark.
 
@@ -56,7 +56,7 @@ If you don't want or can't install one of the previously mentioned browser exten
     * On Opera, press `Ctrl` + `Shift` + `I`
     * If you are having trouble opening your console, try reading the in depth explanation [here](http://webmasters.stackexchange.com/questions/8525/how-to-open-the-javascript-console-in-different-browsers)
 
-2. Copy the following snippet and paste it into the developer console on Sips stream page: `javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://github.com/droobey/sips-chat-filter/raw/master/sips_chat_filter.user.js';})();`
+2. Copy the following snippet and paste it into the developer console on Sips stream page: `javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://droobey.github.io/sips-chat-filter/sips_chat_filter.user.js';})();`
 
 3. Press `Enter` to run the code.
 
