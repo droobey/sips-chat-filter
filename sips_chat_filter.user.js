@@ -3,7 +3,7 @@
 // @namespace   https://github.com/droobey/sips-chat-filter
 // @description Tracks and hides !bets from Sips twitch chat. Made for /r/sips
 // @author      /u/droobey
-// @updateURL   http://droobey.github.io/sips-chat-filter/sips_chat_filter.meta.js
+// @updateURL   https://github.com/droobey/sips-chat-filter/blob/master/sips_chat_filter.user.js
 // @include     /^https?://(www|beta)\.twitch\.tv\/(sips_(/(chat.*)?)?|chat\/.*channel=sips_.*)$/
 // @version     1.0
 // @grant       none
@@ -57,7 +57,6 @@
     $: false,
     localStorage: false,
     App: false,
-    Twitch: false,
 */
 
 (function(code){
@@ -67,7 +66,7 @@
     // Greasemonkey support
     // ----------------------------
     // Greasemonkey userscripts run in a separate environment and cannot use global
-    // variables from the page directly. Vecause of this, we package all out code inside
+    // variables from the page directly. Because of this, we package all out code inside
     // a script tag and have it run in the context of the main page.
 
     // TODO: is there a way to get better error messages? It won't show any line numbers.
@@ -287,8 +286,6 @@ function save_settings(){
     });
     
     set_local_storage_item(STORAGE_KEY, persisted);
-    localStorage.removeItem(LEGACY_FILTERS_KEY);
-    localStorage.removeItem(LEGACY_PHRASES_KEY);
 }
 
 add_initializer(function(){
@@ -349,8 +346,11 @@ function drawBetBar(h){
 // In this part we define all the settings and filters that we support
 // and all code that needs to run when the script gets initialized.
     
-    
+    if(Twitch.user!==null){
     user = Twitch.user.displayName().toLowerCase();
+    }else{
+    user="";
+    }
     
     dicks = 0;
     bet_option = 0;
