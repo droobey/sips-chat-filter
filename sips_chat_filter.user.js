@@ -347,9 +347,10 @@ function drawBetBar(h){
 // and all code that needs to run when the script gets initialized.
     
     if(Twitch.user.displayName()===null){
-    user = Twitch.user.displayName().toLowerCase();
-    }else{
     user="";
+    }else{
+    user = Twitch.user.displayName().toLowerCase();
+    
     }
     
     dicks = 0;
