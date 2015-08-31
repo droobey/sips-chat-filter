@@ -62,6 +62,7 @@ If you don't want or can't install one of the previously mentioned browser exten
 
 ## TODO
 * Get it to play nicely with [BetterTTV](https://nightdev.com/betterttv/)
+* Add !bankheist support
 * Add your current bet to banner when betting is still open
 * Add close button to banner
 * Filter only version for [Twitch ReChat](https://www.rechat.org/)
