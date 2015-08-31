@@ -3,6 +3,7 @@
 // @namespace   https://github.com/droobey/sips-chat-filter
 // @description Tracks and hides !bets from Sips twitch chat. Made for /r/sips
 // @author      /u/droobey
+// @updateURL   https://github.com/droobey/sips-chat-filter/blob/master/sips_chat_filter.user.js
 // @include     /^https?://(www|beta)\.twitch\.tv\/(sips_(/(chat.*)?)?|chat\/.*channel=sips_.*)$/
 // @version     1.0
 // @grant       none
@@ -426,11 +427,11 @@ function check_bet(cmd,u,label){
         o += params[4].replace(/_/g," ")+"<br/>";        
 
          if(parseInt(params[3])>0){
-         o += " Min "+params[3];
+         o += " Minimum bet of "+params[3];
          }
         
         if(parseInt(params[2])>0){
-         o += "Max "+params[2]+ " dicks";
+         o += "Max bet of "+params[2]+ " dicks";
          }
         o += "<br/>";
         var i = 1;
