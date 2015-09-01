@@ -346,14 +346,14 @@ function drawBetBar(h){
 // In this part we define all the settings and filters that we support
 // and all code that needs to run when the script gets initialized.
     
-    if(Twitch.user!==null){
-    user = Twitch.user.displayName().toLowerCase();
+    if(!Twitch.user.displayName()){
+    var user="";
     }else{
-    user="";
+    var user = Twitch.user.displayName().toLowerCase();
     }
     
-    dicks = 0;
-    bet_option = 0;
+    var dicks = 0;
+    var bet_option = 0;
     
 // ---------------------------
 // Command Filter
