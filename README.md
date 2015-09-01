@@ -1,5 +1,6 @@
 # Sips Chat Filter
 A chat filter and bet tracker for Sips twitch chat
+VERY WIP
 
 This script was adapted from the [Twitch Plays Pokemon Chat Filter by jpgohlke](https://github.com/jpgohlke/twitch-chat-filter)
 
