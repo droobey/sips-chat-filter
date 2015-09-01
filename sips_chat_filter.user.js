@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name        Sips Chat Filter
+// @name        Sips Chat Filter - dev
 // @namespace   https://github.com/droobey/sips-chat-filter
 // @description Tracks and hides !bets from Sips twitch chat. Made for /r/sips
 // @author      /u/droobey
 // @updateURL   https://github.com/droobey/sips-chat-filter/blob/master/sips_chat_filter.user.js
-// @include     /^https?://(www|beta)\.twitch\.tv\/(sips_(/(chat.*)?)?|chat\/.*channel=sips_.*)$/
+// @include     /^https?://(www|beta)\.twitch\.tv\/(droobey(/(chat.*)?)?|chat\/.*channel=droobey.*)$/
 // @version     1.0
 // @grant       none
 // @run-at      document-end
