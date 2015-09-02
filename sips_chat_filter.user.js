@@ -5,7 +5,7 @@
 // @author      /u/droobey
 // @updateURL   https://github.com/droobey/sips-chat-filter/blob/master/sips_chat_filter.user.js
 // @include     /^https?://(www|beta)\.twitch\.tv\/(sips_(/(chat.*)?)?|chat\/.*channel=sips_.*)$/
-// @version     1.0
+// @version     1.01
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -332,12 +332,8 @@ function drawBetBar(h){
         }
         
         $("#sips-bet").html(h);
-        
-        //Is the bar not visible
-        if(!$("#sips-bet").is(":visible")){
-           //No - show it      
-            $("#sips-bet").show();
-        }
+       $("#sips-bet").show();
+
     }
 
 // ============================
@@ -363,7 +359,13 @@ var TPP_COMMANDS = [
     "!bets", "!bet "
 ];
 
-function word_is_command(word,u){
+function word_is_command(word,u,label){
+
+    
+    if(word.substring(0, "!betting".length) == "!betting"){
+        return d;
+    }
+    
     var d = any(TPP_COMMANDS, function(cmd){
         if(word.substring(0, cmd.length) === cmd){
             if(word.substring(0, cmd.length) === TPP_COMMANDS[0] && u === user && get_setting_value('SipsTrackBet') ){
@@ -420,6 +422,7 @@ function check_bet(cmd,u,label){
         
         cur_options=[];
         var params = cmd.split(" ");
+        clearTimeout(barTimeout);
         var o = "Betting is open!<br/>";
         
        
@@ -440,14 +443,13 @@ function check_bet(cmd,u,label){
             cur_options.push(params[index]);
             i++;
         }    
-        
         drawBetBar(o);
         
         
     }
     
     if(cmd.substring(0, CLOSE_BET.length) === CLOSE_BET){
-        if(!mod_check){return true;}
+        if(!mod_check || cur_options==[]){return true;}
         
         var c = "Betting is now closed!<br/>";
         
@@ -456,12 +458,12 @@ function check_bet(cmd,u,label){
     }else{
         c += "You did not bet any dicks!";
     }
-           
         drawBetBar(c);
+
     }
     
     if(cmd.substring(0, WIN_BET.length) === WIN_BET){
-        if(!mod_check){return true;}
+        if(!mod_check || cur_options==[]){return true;}
         
         var params = cmd.split(" ");
         var winner = cur_options[ parseInt(params[2])-1 ] ;
@@ -472,12 +474,14 @@ function check_bet(cmd,u,label){
         }else{
          w += "<br/>You lost "+dicks+ " dicks!"; 
         }
-        
-       
+      
+
         drawBetBar(w);
+
+        dicks = 0;
+        bet_option = 0;
         
-        
-        setTimeout(function(){ $("#sips-bet").hide(); }, 30000);
+        var barTimeout = setTimeout(function(){ $("#sips-bet").hide(); }, 30000);
         
     }
    
@@ -747,6 +751,7 @@ add_initializer(function(){
         original_didInsertElement.apply(this, arguments);
         var view = this.$();
         var matches = matches_filters(this.get("msgObject.message"), this.get("msgObject.from"),this.get("msgObject.labels"));
+        
         for (var filter in matches) {
             view.toggleClass(filter, matches[filter]);
         }
